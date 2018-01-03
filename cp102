@@ -1,5 +1,5 @@
 {
-  "AWSTemplateFormatVersion": "2018-01-02",
+  "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "CloudPoint 1.0.2 base template. After the stack creation is complete, we can then install the image downloaded from Veritas website.",
   "Parameters": {
     "KeyName": {
