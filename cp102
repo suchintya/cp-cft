@@ -12,8 +12,13 @@
       "Type": "String",
       "Default": "t2.medium",
       "AllowedValues": [
-        "t2.medium",
         "t2.large",
+	"t2.xlarge",
+	"t2.2xlarge",
+	"m5.large",
+	"m5.xlarge",
+	"m5.2xlarge",
+	"m5.4xlarge",
         "m4.large",
         "m4.xlarge",
         "m4.2xlarge",
@@ -34,13 +39,22 @@
   },
   "Mappings": {
     "AWSInstanceType2Arch": {
-      "t2.medium": {
-        "Arch": "HVM64"
-      },
       "t2.large": {
         "Arch": "HVM64"
       },
-      "m4.large": {
+      "t2.2xlarge": {
+        "Arch": "HVM64"
+      },
+      "m5.large": {
+        "Arch": "HVM64"
+      },
+      "m5.xlarge": {
+        "Arch": "HVM64"
+      },
+      "m5.2xlarge": {
+        "Arch": "HVM64"
+      },
+      "m5.4xlarge": {
         "Arch": "HVM64"
       },
       "m4.xlarge": {
