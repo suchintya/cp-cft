@@ -159,7 +159,15 @@
               "DeleteOnTermination": "false",
               "VolumeSize": "50"
             }
-          }
+          },
+	  {
+	    "DeviceName": "/dev/sda1",
+	    "Ebs": {
+		"VolumeType": "gp2",
+		"DeleteOnTermination": "true",
+		"VolumeSize": "15"
+	    }
+	   }
         ],
         "SecurityGroups": [
           {
