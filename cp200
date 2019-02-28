@@ -2,11 +2,11 @@
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
-yes | sudo mkfs -t ext4 /dev/xvdc
+yes | sudo mkfs -t ext4 /dev/nvme1n1
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install docker-ce -y
 sudo mkdir /cloudpoint
-sudo mount /dev/xvdc /cloudpoint
+sudo mount /dev/nvme1n1 /cloudpoint
 sudo docker load -i Veritas_CloudPoint_2.0.1_IE.img.gz
 sudo docker run -it --rm -v /cloudpoint:/cloudpoint -v /var/run/docker.sock:/var/run/docker.sock veritas/flexsnap-cloudpoint:2.0.1.5300 install
