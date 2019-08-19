@@ -1,3 +1,5 @@
 aws ec2 describe-images --owners self | grep IMAGES | sed 1,6d | awk '{print "deleting ami: " $6}; system("aws ec2 deregister-image --image-id " $6)'
 
+aws ec2 describe-snapshots --owner-ids self | grep SNAPSHOTS | sed 1,6d | awk '{print "deleting snapshot: " $12}; system("aws ec2 delete-snapshot --snapshot-id " $12)'
+
 ec2-describe-snapshots --region us-east-2 --aws-access-key ***** --aws-secret-key ***** | grep SNAPSHOT | sort -k 5 | head -200 | awk '{print "Deleting-> " $2; system("ec2-delete-snapshot --aws-secret-key ***** --aws-access-key ***** " $2)}'
